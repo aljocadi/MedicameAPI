@@ -4,7 +4,7 @@ from flask_cors import CORS
 from config import config
 
 # Routes
-from routes import Movie, VisitaMedica
+from routes import VisitaMedica
 
 app = Flask(__name__)
 
