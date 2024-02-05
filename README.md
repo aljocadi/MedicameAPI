@@ -29,7 +29,11 @@ o
 <br/>
 Postman para probar el API :https://www.postman.com/downloads/
 <br/>
-
-En el fichero sql está la copia de la base de datos para el ejemplo 
+<br/>
+En el fichero sql está la copia de la base de datos para el ejemplo
+<br/>
+<br/>
+para ejecutar la aplicacion desde la carpeta raiz del proyecto
+python src/app.py
 <hr/>
 
