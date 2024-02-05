@@ -39,6 +39,7 @@ def add_visita():
         doctor = request.json['doctor']
         lugar = request.json['lugar']
         fecha = request.json['fecha']
+        #Generar id de texto unico basado en el tiempo
         #id = uuid.uuid4()
         visita = VisitaMedica(0,especialidad, doctor, lugar, DateFormat.convert_str_date(fecha), DateFormat.convert_str_date(fecha))
 

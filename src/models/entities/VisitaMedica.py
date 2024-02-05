@@ -18,5 +18,5 @@ class VisitaMedica():
             'doctor': self.doctor,
             'lugar': self.lugar,
             'fecha': DateFormat.convert_date_to_API(self.fecha) + ' ' + DateFormat.convert_hour(self.hora),
-            #'hora': DateFormat.convert_hour(self.hora)
+            
         }
