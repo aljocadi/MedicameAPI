@@ -47,9 +47,10 @@ class VisitaMedicaModel():
         try:
             connection = get_connection()
             with connection.cursor() as cursor:
-                cursor.execute("""INSERT INTO visitamedica (id, especialidad, doctor, lugar, fecha, hora) 
-                                VALUES (%s, %s, %s, %s, %s, %s)""", (visita.id, visita.especialidad, visita.doctor, visita.lugar, visita.fecha, visita.hora))
+                cursor.execute("""INSERT INTO visitamedica ( especialidad, doctor, lugar, fecha, hora) 
+                                VALUES ( %s, %s, %s, %s, %s)""", ( visita.especialidad, visita.doctor, visita.lugar, visita.fecha, visita.hora))
                 affected_rows = cursor.rowcount
+                
                 connection.commit()
 
             connection.close()

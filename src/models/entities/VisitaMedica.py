@@ -3,7 +3,7 @@ from utils.DateFormat import DateFormat
 
 class VisitaMedica():
 
-    def __init__(self, id, especialidad=None, doctor=None, lugar=None,  fecha=None, hora=None) -> None:
+    def __init__(self,id, especialidad=None, doctor=None, lugar=None,  fecha=None, hora=None) -> None:
         self.id = id
         self.especialidad = especialidad
         self.doctor = doctor
@@ -17,6 +17,6 @@ class VisitaMedica():
             'especialidad': self.especialidad,
             'doctor': self.doctor,
             'lugar': self.lugar,
-            'fecha': DateFormat.convert_date(self.fecha),
-            'hora': DateFormat.convert_hour(self.hora)
+            'fecha': DateFormat.convert_date_to_API(self.fecha) + ' ' + DateFormat.convert_hour(self.hora),
+            #'hora': DateFormat.convert_hour(self.hora)
         }

@@ -12,7 +12,7 @@ main = Blueprint('movie_blueprint', __name__)
 
 
 @main.route('/')
-def get_movies():
+def get_visitas():
     try:
         visitas = VisitaMedicaModel.get_visitas()
         return jsonify(visitas)
@@ -21,7 +21,7 @@ def get_movies():
 
 
 @main.route('/<id>')
-def get_movie(id):
+def get_visita(id):
     try:
         visita = VisitaMedicaModel.get_visita(id)
         if visita != None:
@@ -39,13 +39,13 @@ def add_visita():
         doctor = request.json['doctor']
         lugar = request.json['lugar']
         fecha = request.json['fecha']
-        id = uuid.uuid4()
-        visita = VisitaMedica(str(id), especialidad, doctor, lugar, DateFormat.convert_str_date(fecha), DateFormat.convert_str_date(fecha))
+        #id = uuid.uuid4()
+        visita = VisitaMedica(0,especialidad, doctor, lugar, DateFormat.convert_str_date(fecha), DateFormat.convert_str_date(fecha))
 
         affected_rows = VisitaMedicaModel.add_visita(visita)
 
         if affected_rows == 1:
-            return jsonify(visita.id)
+            return jsonify(affected_rows)
         else:
             return jsonify({'message': "Error on insert"}), 500
 

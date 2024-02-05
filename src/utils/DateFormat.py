@@ -7,6 +7,9 @@ class DateFormat():
     def convert_date(self, date):
         return datetime.datetime.strftime(date, '%d/%m/%Y')
     @classmethod
+    def convert_date_to_API(self, date):
+        return datetime.datetime.strftime(date, '%Y/%m/%d')
+    @classmethod
     def convert_hour(self, hour):
         return datetime.time.strftime(hour, '%H:%M')
     @classmethod
